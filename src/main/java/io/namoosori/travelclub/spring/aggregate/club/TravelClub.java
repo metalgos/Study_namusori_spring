@@ -9,9 +9,9 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor
+@NoArgsConstructor // 롬복으로 아규먼트 없는 생성자 생성
 public class TravelClub extends Entity {
-	//
+	// 상수 지정
 	private static final int MINIMUM_NAME_LENGTH =  3;
 	private static final int MINIMUM_INTRO_LENGTH =  10;
 
@@ -91,7 +91,7 @@ public class TravelClub extends Entity {
 	}
 
 	public static void main(String[] args) {
-		//
+		//샘플용 메인 메서드
 		System.out.println(sample().toString());
 	}
 }
