@@ -2,9 +2,13 @@ package io.namoosori.travelclub.spring.store.mapstore;
 
 import io.namoosori.travelclub.spring.aggregate.club.TravelClub;
 import io.namoosori.travelclub.spring.store.ClubStore;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 import java.util.stream.Collectors;
+
+//빈등록시 별명 설정 가능
+@Repository("clubStore")
 
 public class ClubMapStore implements ClubStore {
 

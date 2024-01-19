@@ -5,7 +5,12 @@
         http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
+    <!-- 컴포넌트 스캔 설정 -->
+    <context:component-scan base-package="io.namoosori.travelclub.spring"/>
+
+
 <!-- 스프링 2.0 올드한 xml 이용한 빈 주입 방식 빈팩토리가 xml에 등록된것을 자동주입해줌. -->
+    <!--
     <bean id = "clubStore" class ="io.namoosori.travelclub.spring.store.mapstore.ClubMapStore"/>
 
 
@@ -13,7 +18,7 @@
 
     <constructor-arg ref="clubStore"/>
     </bean>
-
+-->
 </beans>
 
 
