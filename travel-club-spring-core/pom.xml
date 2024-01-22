@@ -15,7 +15,7 @@
 
     <dependencies>
 
-        <!-- spring -->
+        <!-- spring  폼 설정 파일-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
