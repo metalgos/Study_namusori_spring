@@ -3,12 +3,14 @@ package io.namoosori.travelclub.web.controller;
 import io.namoosori.travelclub.web.aggregate.club.TravelClub;
 import io.namoosori.travelclub.web.service.ClubService;
 import io.namoosori.travelclub.web.service.sdo.TravelClubCdo;
+import io.namoosori.travelclub.web.shared.NameValueList;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/club")
 public class ClubController {
 
     private ClubService clubService;
@@ -17,20 +19,41 @@ public class ClubController {
         this.clubService = clubService;
     }
 
-    @PostMapping("/club") //
+    @PostMapping("") //
     public String register(@RequestBody TravelClubCdo travelClubCdo){
 
         return clubService.registerClub(travelClubCdo);
     }
-    @GetMapping("/club/all")
+    @GetMapping("/all")
     public List<TravelClub> findAll(){
 
         return clubService.findAll();
     }
 
-    @GetMapping("/club/{clubId}")
+    @GetMapping("/{clubId}")
     public TravelClub find(@PathVariable String clubId){
 
         return clubService.findClubById(clubId);
     }
+
+    @GetMapping("") // club?name=name
+    public List<TravelClub>findByName(@RequestParam String name){
+
+        return clubService.findClubsByName(name);
+    }
+
+    @PutMapping("/{clubId}")
+    public void modify(@PathVariable String clubId,@RequestBody NameValueList nameValueList){
+        clubService.modify(clubId,nameValueList);
+    }
+
+    @DeleteMapping("/{clubId}")
+    public void delete(@PathVariable String clubId) {
+
+        clubService.remove(clubId);
+
+    }
+
+
+
 }
