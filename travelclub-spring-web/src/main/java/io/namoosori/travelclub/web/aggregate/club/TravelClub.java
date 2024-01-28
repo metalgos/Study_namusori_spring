@@ -92,7 +92,7 @@ public class TravelClub extends Entity {
 	}
 
 	public static void main(String[] args) {
-		//
+		// 샘플 데이터 보기
 		System.out.println(new Gson().toJson(sample()));
 		NameValueList list = new NameValueList();
 		list.addNameValue("name","Change Club name!!");
