@@ -4,9 +4,12 @@ import io.namoosori.travelclub.web.aggregate.club.TravelClub;
 import io.namoosori.travelclub.web.store.ClubStore;
 import io.namoosori.travelclub.web.store.jpastore.jpo.TravelClubJpo;
 import io.namoosori.travelclub.web.store.jpastore.repository.ClubRepository;
+import io.namoosori.travelclub.web.util.exception.NoSuchClubException;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 @Repository
@@ -27,7 +30,20 @@ public class ClubJpaStore implements ClubStore {
 
     @Override
     public TravelClub retrieve(String clubId) {
-        return null;
+
+        Optional<TravelClubJpo> clubJpo = clubRepository.findById(clubId);
+        if(!clubJpo.isPresent()){
+            throw new NoSuchClubException(String.format("Travel club (%s) is not found.", clubId));
+        }
+
+
+        return clubJpo.get().toDomain();
+    }
+    @Override
+    public List<TravelClub> retrieveAll() {
+        List<TravelClubJpo> clubJpos = clubRepository.findAll();
+        //return clubJpos.stream().map(clubJpos -> clubJpos.toDomain()).collect(Collectors.toList());
+        return clubJpos.stream().map(TravelClubJpo::toDomain).collect(Collectors.toList());
     }
 
     @Override
@@ -35,10 +51,6 @@ public class ClubJpaStore implements ClubStore {
         return null;
     }
 
-    @Override
-    public List<TravelClub> retrieveAll() {
-        return null;
-    }
 
     @Override
     public void update(TravelClub club) {
