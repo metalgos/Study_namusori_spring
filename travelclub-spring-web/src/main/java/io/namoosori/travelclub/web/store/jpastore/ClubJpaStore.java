@@ -54,7 +54,8 @@ public class ClubJpaStore implements ClubStore {
 
     @Override
     public void update(TravelClub club) {
-
+        //jpa save는 업데이트도 겸함, update는 따로 없으며 save사용
+        clubRepository.save();
     }
 
     @Override
