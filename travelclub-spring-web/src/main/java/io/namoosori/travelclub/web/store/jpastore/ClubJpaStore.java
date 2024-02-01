@@ -2,6 +2,8 @@ package io.namoosori.travelclub.web.store.jpastore;
 
 import io.namoosori.travelclub.web.aggregate.club.TravelClub;
 import io.namoosori.travelclub.web.store.ClubStore;
+import io.namoosori.travelclub.web.store.jpastore.jpo.TravelClubJpo;
+import io.namoosori.travelclub.web.store.jpastore.repository.ClubRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -10,10 +12,17 @@ import java.util.List;
 @Repository
 public class ClubJpaStore implements ClubStore {
 
+    private ClubRepository clubRepository;
+
+    public ClubJpaStore(ClubRepository clubRepository){
+        this.clubRepository = clubRepository;
+    }
 
     @Override
     public String create(TravelClub club) {
-        return null;
+        clubRepository.save(new TravelClubJpo(club));
+
+        return club.getId();
     }
 
     @Override
