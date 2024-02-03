@@ -1,15 +1,20 @@
 
-#스터디 - 스프링 관련 강의 나무소리 유투브
+# 스터디 - 스프링 관련 강의 나무소리 유투브
 
-#1. Spring 5 for Beginner - 스프링 5 기초 강의
+## 1. Spring 5 for Beginner - 스프링 5 기초 강의
  
 https://www.youtube.com/watch?v=XL39DGSsYCs&list=PLOSNUO27qFbsW_JuXmzrFxPw7qzPOFfQs&index=1
 
-#2. Microservices with Spring Boot and Spring Cloud - 스프링 부트 클라우드와 마이크로서비스
+<br>
+
+## 2. Microservices with Spring Boot and Spring Cloud - 스프링 부트 클라우드와 마이크로서비스
 
 https://www.youtube.com/watch?v=MFT2s6ijTws&list=PLOSNUO27qFbv95vD0Cc5Vwtro4vcMZGiy&index=1
 
- ide : intelij
+<br>
+<br>
+
+ Ide : intelij
  
  java : more 8+
 
