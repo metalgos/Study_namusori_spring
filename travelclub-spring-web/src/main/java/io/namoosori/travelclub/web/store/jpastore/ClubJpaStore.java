@@ -48,23 +48,31 @@ public class ClubJpaStore implements ClubStore {
 
     @Override
     public List<TravelClub> retrieveByName(String name) {
-        return null;
+        //기본 삭제 검색 등은,은 id로 하지만 검색은 여러 객채로 하기떄문에 쿼리를 생성해서 사용
+        //jpql이란 메소드 이름을 조합하여 쿼리 실행, select에 해당하며 @query로 사용
+        List<TravelClubJpo> clubJpos = clubRepository.findAllByName(name);
+
+        return clubJpos.stream().map(TravelClubJpo::toDomain).collect(Collectors.toList());
     }
 
 
     @Override
     public void update(TravelClub club) {
         //jpa save는 업데이트도 겸함, update는 따로 없으며 save사용
-        clubRepository.save();
+        clubRepository.save(new TravelClubJpo(club));
     }
 
     @Override
     public void delete(String clubId) {
 
+        clubRepository.deleteById(clubId);
     }
 
     @Override
     public boolean exists(String clubId) {
-        return false;
+
+
+        return clubRepository.existsById(clubId);
+
     }
 }
