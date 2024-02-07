@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a92dcf83-ad1c-4269-971b-2064870601d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/namoosori/rest/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/namoosori/rest/service/logic/UserServiceLogic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/namoosori/rest/store/UserStore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/namoosori/rest/store/logic/UserStoreLogic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/namoosori/rest/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/io/namoosori/rest/service/logic/UserServiceLogicTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,12 +40,36 @@
   "keyToString": {
     "Application.User.executor": "Run",
     "Application.UserRestApp.executor": "Run",
+    "JUnit.UserServiceLogicTest.registerTest.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="UserServiceLogicTest.registerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="user-rest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.namoosori.rest.service.logic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.namoosori.rest.service.logic" />
+      <option name="MAIN_CLASS_NAME" value="io.namoosori.rest.service.logic.UserServiceLogicTest" />
+      <option name="METHOD_NAME" value="registerTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserServiceLogicTest.registerTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
