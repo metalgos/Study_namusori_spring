@@ -34,5 +34,15 @@ public class UserController {
          return userService.findAll();
      }
 
+    @PutMapping("/users")
+    public void modify(@RequestBody User newUser){
+
+       userService.modify(newUser);
+    }
+
+    @DeleteMapping("/users/{id}")
+    public void remove(@PathVariable String id){
+         userService.remove(id);
+    }
 
 }
